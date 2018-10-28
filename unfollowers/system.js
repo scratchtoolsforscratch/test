@@ -38,7 +38,7 @@ $(document).ready(function(){
         $(this).val($(this).val().substring(0,19));
     });
     if (!window.location.hash.replace("#", "") == ""){
-        $("#unfuser").val(window.location.hash.substring(0,19));
+        $("#unfuser").val(window.location.hash.replace("#", "").substring(0,19));
         document.getElementById("unfnow").click();
     }
 });
