@@ -1,10 +1,8 @@
-<html>
-  <head>
+<html><head>
     <meta charset="UTF-8">
-    <title>ScratchToolKit</title>
+    <title>Tools for Scratch</title>
     <meta name="description" content="JuegOStrower's website with the best tools for Scracth">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://snipli.com/FLFhD" data-user="4318563" data-level="40"></script>
     <meta name="theme-color" content="#157878">
     <link rel="stylesheet" href="/w3.css">
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -12,13 +10,6 @@
     <link rel="icon" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-		google_ad_client: "ca-pub-3578152357860408",
-		enable_page_level_ads: true
-		});
-	</script>
     <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=UA-82877528-5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -48,108 +39,72 @@
         window.location = "https://www.juegostrower.tk/downloader/#" + document.getElementById("openproj").value;
         break;
       default:
-        alert("There was an error reading the function data");
+        alert("Unxpected error");
         break;
       }
     }
     $(document).ready(function(){
-      $("#downproj,#makeproj,#unshid,#openproj,#secretid").bind("input paste", function(){
+      $("#makeproj,#unshid,#openproj").bind("input paste", function(){
 	      $(this).val($(this).val().replace(/\D/g,'').substring(0,10));
       });
-	  $("#connuser,#unfuser").bind("input paste", function(){
+	  $("#unfuser").bind("input paste", function(){
         $(this).val($(this).val().substring(0,19));
 	  });
     })
     </script>
   </head>
   <body>
-    <section class="w3-center w3-container w3-black w3-padding-64">
-      <h1 class="project-name">ScratchToolKit</h1>
-      <h2 class="project-tagline">The best tools for your scratch projects are here...</h2>
-      <a href="userscripts" class="btn">Userscripts</a>
-      <a href="downloader" class="btn">Downloader</a>
-      <a href="scratchon" class="btn">Scratch On</a>
+    <section class="w3-center w3-container w3-black w3-padding-16">
+      <h1 class="project-name">Tools for Scratch</h1>
+      <h2 class="project-tagline">Powered by @JuegOStrower on Scratch</h2>
     </section>
-    <div class="w3-dark-gray w3-container" style="min-height:50px">
-      <div class="w3-padding-16 w3-center">
-        <p><b>Warning:</b> Some tools are deprecated. I'm currently workng on deleting all the old tools that doesn't work and fixing the broken links. I am also planning thing that you don't expect..... cloud data api.... is that you?</p>
-        <p><b>Warning 2:</b> Yes, I know, Tools doesn't work. It's full of bugs. There are broken links. Pages doesn't exist. I've left this project some months ago, but I will continue with this on the next days. I'll also make new tools specially designed for scratch 3.0 and share things that have been never shared (bu they were on my backpack haha)
-</p>
+    <div class="w3-dark-gray w3-container">
+      <div class="w3-padding-8 w3-center">
+        <p><b>News:</b> I'm working on the next version of this website. It's schuduled to by released between march and may. At this point, I removed all the old tools on the home of the website, letting only the very good ones. If you need one of the old ones, look for it on github or contact me on Scratch.</p>
+        
       </div>
     </div>
     <div class="w3-row">
-      <div class="w3-third w3-indigo w3-container" style="min-height:500px">
-        <div class="w3-padding-32 w3-center">
-          <h2>Smart bookmarks</h2>
-          <p>Click a bookmark to make a hack</p>
+      <div class="w3-third w3-blue" style="min-height:300px">
+        <div class="w3-padding-16 w3-center">
+          <h2>Unshared projects viewer</h2>
+          <p class="w3-container">You can see any project with the default scratch viewer. Right now, I'm working on Scratch 3.0 support.</p>
           <div class="w3-container w3-responsive">
             <table class="w3-table">
               <tbody>
                 <tr class="w3-text-white">
-                  <th>Name</th>
-                  <th>Add!</th>
+                  <th><label for="unshid">What's the Project Id?</label></th>
                 </tr>
                 <tr class="w3-white">
-                  <td>Expanded Title</td>
-                  <td>Here</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Animated Thubnails</td>
-                  <td>Here</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Open In Scratch 3</td>
-                  <td>Here</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>AlertMyMessages</td>
-                  <td>Here</td>
+                  <td><input id="unshid" style="padding:1px" class="w3-input" type="text" value="181467202"></td>
+                  <td onclick="window.location = '/unsharedviewer/#' + document.getElementById('unshid').value">Play!</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p>Get more info <a href="bookmarks">here</a></p>
+          <p>Get more info <a href="unsharedviewer">here</a></p>
         </div>
-      </div>
-      <div class="w3-third w3-teal w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>Smart addons</h2>
-          <p>Click a buttons to make a hack...</p>
-          <div class="w3-container w3-responsive">
+      </div><div class="w3-third w3-highway-red w3-center" style="min-height:300px">
+    <div class="w3-padding-16">
+          <h2>Who unfollowed me</h2>
+          <p class="w3-container">See what people has unfollowed you or any user. Right now, it shows deleted users!</p>
+		  <div class="w3-container w3-responsive">
             <table class="w3-table">
               <tbody>
                 <tr class="w3-text-white">
-                  <th>Name</th>
-                  <th>Add!</th>
+                  <th><label for="unfuser">What's the Username?</label></th>
                 </tr>
                 <tr class="w3-white">
-                  <td>Expanded Title</td>
-                  <td>Here</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Animated Thubnails</td>
-                  <td>Here</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Open In other editor</td>
-                  <td>Here</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Messages++</td>
-                  <td>Here</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Unshared Player</td>
-                  <td>Here</td>
+                  <td><input id="unfuser" style="padding:1px" class="w3-input" type="text" value="JuegOStrower"></td>
+                  <td onclick="window.location = '/unfollowers/#' + document.getElementById('unfuser').value">Get!</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p>Get more info <a href="userscripts">here</a></p>
+          <p>Get more info <a href="unfollowers">here</a></p>
         </div>
-      </div>
-      <div class="w3-third w3-highway-blue w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
+      </div><div class="w3-third w3-highway-blue w3-center" style="min-height:300px">
+        <div class="w3-padding-16">
           <h2>Unshared projects downloader</h2>
           <p>The private projects only hides the project page, but the assets and the code are public..</p>
           <div class="w3-container w3-responsive">
@@ -170,55 +125,34 @@
       </div>
     </div>
     <div class="w3-row">
-      <div class="w3-third w3-highway-red w3-container" style="min-height:500px">
-        <div class="w3-padding-32 w3-center">
-          <h2>Edit the scratch editor</h2>
-          <p class="w3-container">Yes, you can edit the Scracth Editor...</p>
-          <div class="w3-container w3-responsive">
-          </div>
-          <p>Get more info <a href="editeditor">here</a></p>
-        </div>
-      </div>
-      <div class="w3-third w3-highway-green w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
+      <div class="w3-third w3-highway-green w3-center" style="min-height:300px">
+        <div class="w3-padding-16">
           <h2>The ScratchOn project</h2>
           <p class="w3-container">When Scratch goes down, nobody can use the website, but the api is on...</p>
-          <p>Get more info <a href="scratchon">here</a></p>
+          <p>This project's previw is not available yet</p>
         </div>
-      </div>
-      <div class="w3-third w3-highway-brown w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>Scratch blocks code</h2>
-          <p class="w3-container">To make your own hacled blocks, you have to access to the blocks inputs data.</p>
-          <p>Get more info <a href="blocks">here</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-row">
-      <div class="w3-third w3-blue-gray w3-container" style="min-height:500px">
-        <div class="w3-padding-32 w3-center">
-          <h2>Last connected time</h2>
-          <p class="w3-container">Scratch has a bug: you can see the last connected bug of any user.</p>
+      </div><div class="w3-third w3-indigo w3-center" style="min-height:300px">
+        <div class="w3-padding-16">
+          <h2>Other Players for projects</h2>
+          <p class="w3-container">You can play any project with those players. <a href="players">More info.</a></p>
           <div class="w3-container w3-responsive">
             <table class="w3-table">
               <tbody>
                 <tr class="w3-text-white">
-                  <th><label for="connuser">What's the User Name?</label></th>
-                </tr>
-                <tr class="w3-white">
-                  <td><input id="connuser" style="padding:1px" class="w3-input" type="text" value="JuegOStrower"></td>
-                  <td onclick="window.location = '/lastconnected/#' + document.getElementById('connuser').value">Get!</td>
-                </tr>
+                  <th>What is the project id?</th>
+                  <th><input value="181467202" type="text" class="w3-input w3-indigo" style="display: inline-block; padding: 1px; color: black; width: 110px;" id="openproj"></th>
+</tr><tr class="w3-text-white"><td>Now, select a player</td></tr>
               </tbody>
             </table>
           </div>
-          <p>Get more info <a href="lastconnected">here</a></p>
+          <div class="w3-white">
+                  <span onclick="play('gui')">Scratch 3 GUI</span> - 
+                <span onclick="play('guidev')">Scratch 3 GUI Develop</span> - <span onclick="play('vm')">Scratch VM</span> - <span onclick="play('phos')">Phosphorus</span> - <span onclick="play('rem')">Remote Player</span> - <span onclick="play('down')">Download</span></div>
         </div>
-      </div>
-      <div class="w3-third w3-brown w3-container" style="min-height:500px">
-        <div class="w3-padding-32 w3-center">
-          <h2>FastGo</h2>
-          <p class="w3-container">Short text to fast redirect users to my projects.</p>
+      </div><div class="w3-third w3-brown" style="min-height:300px">
+        <div class="w3-padding-16 w3-center">
+          <h2>Scratch Redirector</h2>
+          <p class="w3-container">Short text to fast redirect users to my projects. It will be removed soon. <a href="fastgo">More info</a></p>
           <div class="w3-container w3-responsive">
             <table class="w3-table">
               <tbody>
@@ -232,170 +166,10 @@
               </tbody>
             </table>
           </div>
-          <p>Get more info <a href="fastgo">here</a></p>
         </div>
-      </div>
-      <div class="w3-third w3-green w3-container" style="min-height:500px">
-        <div class="w3-padding-32 w3-center">
-          <h2>Scratch Bugs</h2>
-          <p class="w3-container">Yes, Scratch has too many errors...</p>
-          <p>Get more info <a href="bugs">here</a></p>
-        </div>
-      </div>
+      </div> 
     </div>
-    <div class="w3-row">
-      <div class="w3-third w3-blue w3-container" style="min-height:500px">
-        <div class="w3-padding-32 w3-center">
-          <h2>Unshared projects viewer</h2>
-          <p class="w3-container">You can see any project with the default scratch viewer.</p>
-          <div class="w3-container w3-responsive">
-            <table class="w3-table">
-              <tbody>
-                <tr class="w3-text-white">
-                  <th><label for="unshid">What's the Project Id?</label></th>
-                </tr>
-                <tr class="w3-white">
-                  <td><input id="unshid" style="padding:1px" class="w3-input" type="text" value="181467202"></td>
-                  <td onclick="window.location = '/unsharedviewer/#' + document.getElementById('unshid').value">Play!</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>Get more info <a href="unsharedviewer">here</a></p>
-        </div>
-      </div>
-      <div class="w3-third w3-purple w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>Scratch en español</h2>
-          <p class="w3-container">Algunas partes del editor de Scratch no están traducidas al español, mira como corregirlas..</p>
-          <p>Ver más información <a href="spanish">aquí</a></p>
-        </div>
-      </div>
-      <div class="w3-third w3-indigo w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>Other Players for projects</h2>
-          <p class="w3-container">You can play any prject with the Scratch 3 Beta, in Phospurus or download it.</p>
-          <div class="w3-container w3-responsive">
-            <table class="w3-table">
-              <tbody>
-                <tr class="w3-text-white">
-                  <th>What is the project id</th>
-                  <th><input value="181467202" type="text" class="w3-input w3-indigo" style="display: inline-block; padding: 1px; color: black; width: 110px;" id="openproj"></th>
-                </tr>
-                <tr class="w3-white">
-                  <td>Scratch 3 GUI</td>
-                  <td onclick="play('gui')">Play</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Scratch 3 GUI Develop</td>
-                  <td onclick="play('guidev')">Play</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Scratch VM</td>
-                  <td onclick="play('vm')">Play</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Phosphorus</td>
-                  <td onclick="play('phos')">Play</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Remote Player</td>
-                  <td onclick="play('rem')">Play</td>
-                </tr>
-                <tr class="w3-white">
-                  <td>Download</td>
-                  <td onclick="play('down')">Play</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>Get more info <a href="players">here</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-row">
-      <div class="w3-third w3-teal w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>This website</h2>
-          <p class="w3-container">It was very difficult to design this website. See how I made it and how can you fork it.</p>
-          <p>Get more info <a href="website">here</a></p>
-        </div>
-      </div>
-      <div class="w3-third w3-highway-green w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>Some Scratch Info</h2>
-          <p class="w3-container">Get the newest info about scratch like what happend with extensions, what is the api v2 and how you can use the Scratch 3 beta.</p>
-          <p>Read it <a href="info">here</a></p>
-        </div>
-      </div>
-	  <div class="w3-third w3-highway-blue w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>Tampermokey</h2>
-          <p class="w3-container">You can see hoe to run all the userscripts and smart addons here</p>
-          <p>Get more info <a href="tampermonkey">here</a></p>
-        </div>
-      </div>
-    </div>
-	<div class="w3-row">
-      <div class="w3-third w3-highway-red w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>Who unfollowed me</h2>
-          <p class="w3-container">See what people has unfollowed you or any user</p>
-		  <div class="w3-container w3-responsive">
-            <table class="w3-table">
-              <tbody>
-                <tr class="w3-text-white">
-                  <th><label for="unfuser">What's the Username?</label></th>
-                </tr>
-                <tr class="w3-white">
-                  <td><input id="unfuser" style="padding:1px" class="w3-input" type="text" value="JuegOStrower"></td>
-                  <td onclick="window.location = '/unfollowers/#' + document.getElementById('unfuser').value">Get!</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>Get more info <a href="unfollowers">here</a></p>
-        </div>
-      </div>
-      <div class="w3-third w3-brown w3-center" style="min-height:500px">
-        <div class="w3-padding-32">
-          <h2>Auto comment bot</h2>
-          <p class="w3-container">Comment in all the follower list from any user, notify to all your followers that you have released a project..</p>
-          <p>Get more info about me <a href="commenter">here</a></p>
-        </div>
-      </div>
-	   <div class="w3-third w3-deep-orange w3-container" style="min-height:500px">
-        <div class="w3-padding-32 w3-center">
-          <h2>Get projects secret data</h2>
-          <p class="w3-container">Know if one project was moderated, if is nfe and the title of an unshared project</p>
-          <div class="w3-container w3-responsive">
-            <table class="w3-table">
-              <tbody>
-                <tr class="w3-text-white">
-                  <th><label for="secretid">What's the Project Id?</label></th>
-                </tr>
-                <tr class="w3-white">
-                  <td><input id="secretid" style="padding:1px" class="w3-input" type="text" value="181467202"></td>
-                  <td onclick="window.location = '/secretdata/#' + document.getElementById('secretid').value">Get!</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>Get more info <a href="secretdata">here</a></p>
-        </div>
-      </div>
-    </div>
-	<div class="w3-row">
-	   <div class="w3-rest w3-deep-purple w3-center" style="min-height:300px">
-        <div class="w3-padding-32">
-          <h2>Me!</h2>
-          <p class="w3-container">Hey! I'm JuegOStrower. I like developing tools and hacks for Scracth.</p>
-          <p>Get more info about me <a href="me">here</a></p>
-        </div>
-      </div>
-	</div>
     <footer style="min-height: calc(100vh - 1740px - 331px);" class="w3-center w3-container w3-black w3-padding-16">
-      <span class="site-footer-owner">This site is maintained by <a href="https://scratch.mit.edu/users/JuegOStrower">JuegOStrower</a> in Scratch. See more <a href="me">About me</a></span>
+      <span class="site-footer-owner">This site is maintained by <a href="https://scratch.mit.edu/users/JuegOStrower">JuegOStrower</a> in Scratch.</span>
     </footer>
-  </body>
-</html>
+                    </div></body></html>
