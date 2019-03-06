@@ -1,4 +1,2 @@
-## Welcome to the JuegOStrower Script Page!
-
-### Hello!
-I'm making all new site with all my avaible tools for scratch, it's called ScratchToolKit and you can see the preview and the avaible projects in www.juegostrower.tk
+## Welcome!
+I'm making an all new website with my tools for scratch. Now, you can find the old version on www.juegostrower.tk . The source code of the new version is not published yet. It's schuduled to by released between march and may. At this point, I removed all the old tools on the home of the website, letting only the very good ones. If you need one of the old ones, look for it on github or contact me on Scratch. When the new website is ready, the old one will be removed.
