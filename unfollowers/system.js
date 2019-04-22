@@ -35,7 +35,7 @@ $(document).ready(function(){
         prompt('Copy and paste this link to auto download the enetered project',"http://www.juegostrower.tk/unfollowers/#" + $("#unfuser").val());
     });
     $("#unfuser").bind("input paste", function(){
-        $(this).val($(this).val().substring(0,19));
+        $(this).val($(this).val().substring(0,30));
     });
     if (!window.location.hash.replace("#", "") == ""){
         $("#unfuser").val(window.location.hash.replace("#", "").substring(0,19));
