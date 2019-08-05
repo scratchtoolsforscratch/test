@@ -35,7 +35,7 @@ $(document).ready(function(){
         prompt('Copy and paste this link to auto download the enetered project',"http://www.juegostrower.tk/unfollowers/#" + $("#unfuser").val());
     });
     $("#unfuser").bind("input paste", function(){
-	$("#unfuser").val($("#unfuser").val().replace(/ /g, '').substring($("#unfuser").val().replace(/ /g, '').lastIndexOf('/'),30));
+	$("#unfuser").val($("#unfuser").val().replace(/ /g, '').substring($("#unfuser").val().replace(/ /g, '').lastIndexOf('/'),30).replace(/\//g, ''));
     });
     if (!window.location.hash.replace("#", "") == ""){
         $("#unfuser").val(window.location.hash.replace("#", "").substring(0,19));
