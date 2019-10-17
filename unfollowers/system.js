@@ -62,7 +62,7 @@ function loaded(data) {
 function continueCode() {
 	while (ans.length > 19) {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("GET", 'https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/' + user + ' /followers?offset=' + followers, false);
+		xmlHttp.open("GET", 'https://api.scratchnotifier.cf/scratch/users/' + user + ' /followers?offset=' + followers, false);
 		xmlHttp.send(null);
 		ans = JSON.parse(xmlHttp.responseText);
 		for (var i = 0;i < ans.length;i++){
