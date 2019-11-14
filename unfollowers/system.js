@@ -35,7 +35,7 @@ $(document).ready(function(){
         prompt('Copy and paste this link to auto download the enetered project',"http://www.juegostrower.tk/unfollowers/#" + $("#unfuser").val());
     });
     $("#unfuser").bind("input paste", function(){
-	$("#unfuser").val($("#unfuser").val().match(/([^\/]*)\/*$/)[1].replace(/ /g, '').replace(/%20/g, '').replace(/\//g, '').substring(0,30));
+	$("#unfuser").val($("#unfuser").val().match(/([^\/]*)\/*$/)[1].replace(/ /g, '').replace(/\//g, '').substring(0,30));
     });
     if (!window.location.hash.replace("#", "") == ""){
         $("#unfuser").val(window.location.hash.replace("#", "").substring(0,19));
@@ -62,7 +62,7 @@ function loaded(data) {
 function continueCode() {
 	while (ans.length > 19) {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("GET", 'https://api.scratchnotifier.cf/scratch/users/' + user + ' /followers?offset=' + followers, false);
+		xmlHttp.open("GET", 'https://api.scratchnotifier.cf/scratch/users/' + user + '/followers?offset=' + followers, false);
 		xmlHttp.send(null);
 		ans = JSON.parse(xmlHttp.responseText);
 		for (var i = 0;i < ans.length;i++){
