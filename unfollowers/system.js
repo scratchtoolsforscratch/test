@@ -35,10 +35,10 @@ $(document).ready(function(){
         prompt('Copy and paste this link to auto download the enetered project',"https://juegostrower.github.io/unfollowers/#" + $("#unfuser").val());
     });
     $("#unfuser").bind("input paste", function(){
-	$("#unfuser").val($("#unfuser").val().match(/([^\/]*)\/*$/)[1].replace(/ /g, '').replace(/\//g, '').substring(0,30));
+	$("#unfuser").val($("#unfuser").val().match(/([^\/]*)\/*$/)[1].replace(/ /g, '').replace(/\//g, '').replace(/%20%/g, '').substring(0,30));
     });
     if (!window.location.hash.replace("#", "") == ""){
-        $("#unfuser").val(window.location.hash.replace("#", "").substring(0,19));
+        $("#unfuser").val(window.location.hash.replace("#", "").substring(0,30).match(/([^\/]*)\/*$/)[1].replace(/ /g, '').replace(/%20%/g, ''));
         document.getElementById("unfnow").click();
     }
 });
