@@ -32,7 +32,7 @@ $(document).ready(function(){
         }
     });
     $("#unfdirect").click(function(){
-        prompt('Copy and paste this link to auto download the enetered project',"http://www.juegostrower.tk/unfollowers/#" + $("#unfuser").val());
+        prompt('Copy and paste this link to auto download the enetered project',"https://juegostrower.github.io/unfollowers/#" + $("#unfuser").val());
     });
     $("#unfuser").bind("input paste", function(){
 	$("#unfuser").val($("#unfuser").val().match(/([^\/]*)\/*$/)[1].replace(/ /g, '').replace(/\//g, '').substring(0,30));
@@ -62,29 +62,38 @@ function loaded(data) {
 function continueCode() {
 	while (ans.length > 19) {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("GET", 'https://api.scratchnotifier.cf/scratch/users/' + user + '/followers?offset=' + followers, false);
+		xmlHttp.open("GET", 'https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/' + user + ' /followers?offset=' + followers, false);
 		xmlHttp.send(null);
-		ans = JSON.parse(xmlHttp.responseText);
-		for (var i = 0;i < ans.length;i++){
-			list.push(ans[i].username);
+		if(xmlHttp.status!=200){
+			ready();
+			console.log("Error! API unavailable");
+			document.getElementById("usertitle").innerHTML = "Error! API unavailable";
+			document.getElementById("userlist").innerHTML = "Please try again later.";
+		} else {
+			ans = JSON.parse(xmlHttp.responseText);
+			for (var i = 0;i < ans.length;i++){
+				list.push(ans[i].username);
+			}
+			followers += ans.length;
+			setProgress(40 + 49*((followers/20)/(pageCount * 3 + 1)));
+			console.log("Indexing old followers: page " + Math.round(followers / 20) + "/" + (pageCount * 3 + 1) + " (approx)");
 		}
-		followers += ans.length;
-		setProgress(40 + 49*((followers/20)/(pageCount * 3 + 1)));
-		console.log("Indexing old followers: page " + Math.round(followers / 20) + "/" + (pageCount * 3 + 1) + " (approx)");
 	}
-	console.log("Checking difrences between current and old");
-	for (var i = 0; i < list.length; i++) {
-		if (!(nowlist.includes(list[i]))){
-			diff.push(list[i]);
+	if(document.getElementById('percBar').style.width!=100){
+		console.log("Checking difrences between current and old");
+		for (var i = 0; i < list.length; i++) {
+			if (!(nowlist.includes(list[i]))){
+				diff.push(list[i]);
+			}
 		}
+		console.log("Complete");
+		ready();
+		unfollowers = followers - nowfollowers;
+		document.getElementById("usertitle").innerHTML = unfollowers + " Users Unfollowed " + user + ".";
+		console.log(unfollowers + " Users Unfollowed " + user + ".");
+		document.getElementById("userlist").innerHTML = "Those are: " + diff.toString().replace(/,/g,", ");
+		console.log ("Those are: " + diff.toString().replace(/,/g,", "));
 	}
-	console.log("Complete");
-	ready();
-	unfollowers = followers - nowfollowers;
-	document.getElementById("usertitle").innerHTML = unfollowers + " Users Unfollowed " + user + ".";
-	console.log(unfollowers + " Users Unfollowed " + user + ".");
-	document.getElementById("userlist").innerHTML = "Those are: " + diff.toString().replace(/,/g,", ");
-	console.log ("Those are: " + diff.toString().replace(/,/g,", "));
 }
 
 function setProgress(perc) {
