@@ -5,7 +5,7 @@ $(document).ready(function(){
 	  	$("#player").attr("class","");
 	})
 	$("#playdirect").click(function(){
-     		prompt('Copy and paste this link to auto download the enetered project',"http://www.juegostrower.tk/unsharedviewer/#" + $("#playproj").val());
+     		prompt('Copy and paste this link to auto download the enetered project',"https://juegostrower.github.io/unsharedviewer/#" + $("#playproj").val());
 	})
 	$("#playproj").bind("input paste", function(){
 		$(this).val($(this).val().replace(/\D/g,'').substring(0,10));
