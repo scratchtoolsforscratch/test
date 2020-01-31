@@ -63,13 +63,24 @@ function continueCode() {
 	while (ans.length > 19) {
 		var xmlHttp = new XMLHttpRequest();
 		xmlHttp.open("GET", 'https://cors-anywhere.herokuapp.com/https://api.scratch.mit.edu/users/' + user + '/followers?offset=' + followers, false);
-		xmlHttp.send(null);
-		if(xmlHttp.status!=200){
+		try {
+			xmlHttp.send(null);
+		} catch(err){
+			console.error(err)
+			ans = [false];
 			ready();
-			ans = [0];
 			console.log("Error! API unavailable");
 			document.getElementById("usertitle").innerHTML = "Error! API unavailable";
-			document.getElementById("userlist").innerHTML = "Please try again later.";
+			console.log("Please try again later. If this keeps happening, please report this error in my profile (@JuegOStrower).");
+			document.getElementById("userlist").innerHTML = "Please try again later. If this keeps happening, please report this error in my profile (@JuegOStrower).";			
+		}
+		if(xmlHttp.status!=200){
+			ans = [false];
+			ready();
+			console.log("Error! API unavailable");
+			document.getElementById("usertitle").innerHTML = "Error! API unavailable";
+			console.log("Please try again later. If this keeps happening, please report this error in my profile (@JuegOStrower).");
+			document.getElementById("userlist").innerHTML = "Please try again later. If this keeps happening, please report this error in my profile (@JuegOStrower).";
 		} else {
 			ans = JSON.parse(xmlHttp.responseText);
 			for (var i = 0;i < ans.length;i++){
@@ -80,7 +91,7 @@ function continueCode() {
 			console.log("Indexing old followers: page " + Math.round(followers / 20) + "/" + (pageCount * 3 + 1) + " (approx)");
 		}
 	}
-	if(document.getElementById('percBar').style.width!="100%"){
+	if(ans[0]!=false){
 		console.log("Checking difrences between current and old");
 		for (var i = 0; i < list.length; i++) {
 			if (!(nowlist.includes(list[i]))){
