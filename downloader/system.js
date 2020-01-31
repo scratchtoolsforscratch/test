@@ -18,7 +18,7 @@ $(document).ready(function () {
         }
     });
     $("#downdirect").click(function () {
-        prompt('Copy and paste this link to auto download the enetered project', "https://www.juegostrower.tk/downloader/#" + $("#downproj").val());
+        prompt('Copy and paste this link to auto download the enetered project', "https://juegostrower.github.io/downloader/#" + $("#downproj").val());
     });
     $("#downproj").bind("input paste", function () {
         $(this).val($(this).val().replace(/\D/g, '').substring(0, 10));
