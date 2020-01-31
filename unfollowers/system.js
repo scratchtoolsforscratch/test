@@ -66,6 +66,7 @@ function continueCode() {
 		xmlHttp.send(null);
 		if(xmlHttp.status!=200){
 			ready();
+			ans = [0];
 			console.log("Error! API unavailable");
 			document.getElementById("usertitle").innerHTML = "Error! API unavailable";
 			document.getElementById("userlist").innerHTML = "Please try again later.";
