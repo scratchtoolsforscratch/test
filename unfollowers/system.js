@@ -80,7 +80,7 @@ function continueCode() {
 			console.log("Indexing old followers: page " + Math.round(followers / 20) + "/" + (pageCount * 3 + 1) + " (approx)");
 		}
 	}
-	if(document.getElementById('percBar').style.width!=100){
+	if(document.getElementById('percBar').style.width!="100%"){
 		console.log("Checking difrences between current and old");
 		for (var i = 0; i < list.length; i++) {
 			if (!(nowlist.includes(list[i]))){
