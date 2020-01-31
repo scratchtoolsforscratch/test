@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$("#makenow").click(function(){
 	if ($(this).text() == "Make it!"){
         	$(this).text("Edit");
-        	$("#makelink").html("<a href='https://go.juegostrower.tk/" + $("#maketype").val() + $("#makeproj").val() + "'>https://go.juegostrower.tk/" + $("#maketype").val() + $("#makeproj").val() + "</a>");
+        	$("#makelink").html("<a href='https://juegostrower.github.io/go/" + $("#maketype").val() + $("#makeproj").val() + "'>https://juegostrower.github.io/go/" + $("#maketype").val() + $("#makeproj").val() + "</a>");
         	$("#makelink").attr("class","w3-text-black");
         	$("#maketype").attr("hidden","");
         	$("#makelinkbar").attr("hidden","");
