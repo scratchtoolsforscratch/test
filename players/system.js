@@ -13,10 +13,10 @@
         window.location = "https://phosphorus.github.io/#" + document.getElementById("downproj").value;
         break;
       case "rem":
-        window.location = "https://www.juegostrower.tk/unsharedviewer/#" + document.getElementById("downproj").value;
+        window.location = "https://juegostrower.github.io/unsharedviewer/#" + document.getElementById("downproj").value;
         break;
       case "down":
-        window.location = "https://www.juegostrower.tk/downloader/#" + document.getElementById("downproj").value;
+        window.location = "https://juegostrower.github.io/downloader/#" + document.getElementById("downproj").value;
         break;
       default:
         alert("There was an error reading the function data");
